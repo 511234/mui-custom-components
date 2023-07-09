@@ -1,0 +1,29 @@
+{
+  "name": "mui-custom-components",
+  "version": "1.0.0",
+  "description": "Custom UI components based on MUI components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/511234/mui-custom-components.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "material-ui"
+  ],
+  "author": "Lulu Tung",
+  "license": "ISC",
+  "devDependencies": {
+    "@mui/icons-material": "^5.13.7",
+    "@mui/lab": "^5.0.0-alpha.135",
+    "@mui/material": "^5.13.7",
+    "@mui/x-data-grid": "^5.17.26",
+    "@mui/x-date-pickers": "^5.0.20",
+    "dayjs": "^1.11.9",
+    "typescript": "^5.1.6"
+  }
+}
