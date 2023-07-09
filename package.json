@@ -1,5 +1,5 @@
 {
-  "name": "mui-custom-components",
+  "name": "@lulutheflaneur/mui-custom-components",
   "version": "1.0.0",
   "description": "Custom UI components based on MUI components",
   "main": "dist/cjs/index.js",
