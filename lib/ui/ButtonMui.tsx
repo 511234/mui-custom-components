@@ -1,17 +1,10 @@
-import { Button, ButtonProps } from '@mui/material';
+import {Button, ButtonProps} from '@mui/material';
 
-type TButtonMui = ButtonProps & {
-  text: string;
-};
-
-const ButtonMui = (props: TButtonMui) => {
-  const { text, ...others } = props;
+const ButtonMui = ({text, ...others}: ButtonProps<"button", { text: string }>) => {
   return (
-    <>
-      <Button color="primary" sx={{ my: 0 }} variant="text" {...others}>
-        {text}
-      </Button>
-    </>
+    <Button color="primary" sx={{my: 0}} variant="text" {...others}>
+      {text}
+    </Button>
   );
 };
 
