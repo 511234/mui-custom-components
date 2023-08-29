@@ -9,6 +9,11 @@ used along with react-hook-form.
 npm i @lulutheflaneur/mui-custom-components
 ```
 
+### Story behind...
+
+I was migrating a React.js, antd-based project to MUI. TreeView API is available in MUI but it seems impossible to be
+used with Select / AutoComplete components for UI consistency. So, I tried writing a TreeSelect using MUI AutoComplete
+and List components during my leisure time. ;)
 > 💡Highlight: Customized Tree Select component made with MUI's Autocomplete & List components
 
 ### Components
