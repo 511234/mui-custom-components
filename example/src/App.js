@@ -1,4 +1,4 @@
-import {ButtonMui, InputMui, RowMui, TreeSelectMui} from "@lulutheflaneur/mui-custom-components";
+import {ButtonMui, CheckboxMui, InputMui, RowMui, TreeSelectMui} from "@lulutheflaneur/mui-custom-components";
 import {Grid} from "@mui/material";
 import {useRef, useState} from "react";
 
@@ -8,11 +8,16 @@ function App() {
 
     const nameRef = useRef(null);
     const ageRef = useRef(null)
+    const returningStudentRef = useRef(null)
 
     const handleSubmit = () => {
+        console.log('-------------------------------')
         console.log('Name: ', nameRef.current.value)
         console.log('Age: ', ageRef.current.value)
         console.log('Class: ', schoolClass)
+        console.log('Is returning student: ', returningStudentRef.current.checked)
+        console.log('-------------------------------')
+
     }
 
     const setValue = (_, classId) => {
@@ -44,6 +49,8 @@ function App() {
                     <InputMui label="age" type="number" InputLabelProps={{shrink: true}} ref={ageRef}/>
                 </Grid>
             </RowMui>
+
+            <RowMui><CheckboxMui label="Are you a returning student?" ref={returningStudentRef}/></RowMui>
 
             <RowMui style={{paddingLeft: '1rem'}}>
                 <TreeSelectMui
