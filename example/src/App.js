@@ -1,10 +1,19 @@
-import {InputMui, RowMui, TreeSelectMui} from "@lulutheflaneur/mui-custom-components";
+import {ButtonMui, InputMui, RowMui, TreeSelectMui} from "@lulutheflaneur/mui-custom-components";
 import {Grid} from "@mui/material";
-import {useState} from "react";
+import {useRef, useState} from "react";
 
 function App() {
 
     const [schoolClass, setSchoolClass] = useState('')
+
+    const nameRef = useRef(null);
+    const ageRef = useRef(null)
+
+    const handleSubmit = () => {
+        console.log('Name: ', nameRef.current.value)
+        console.log('Age: ', ageRef.current.value)
+        console.log('Class: ', schoolClass)
+    }
 
     const setValue = (_, classId) => {
         setSchoolClass(classId);
@@ -25,20 +34,18 @@ function App() {
             <p>Sample lunch box ordering form using MUI Custom Component library
             </p>
         </header>
-        <body>
-        <RowMui>
+        <Grid container spacing={2} style={{padding: 50}}>
             <RowMui justifyContent="center">
                 <Grid item xs={6}>
-                    <InputMui label="name" InputLabelProps={{shrink: true}}/>
+                    <InputMui label="name" InputLabelProps={{shrink: true}} ref={nameRef}/>
                 </Grid>
 
                 <Grid item xs={6}>
-                    <InputMui label="age" InputLabelProps={{shrink: true}}
-                    />
+                    <InputMui label="age" type="number" InputLabelProps={{shrink: true}} ref={ageRef}/>
                 </Grid>
             </RowMui>
-            <RowMui justifyContent="center">
-                {/*<Grid item xs={6}>*/}
+
+            <RowMui style={{paddingLeft: '1rem'}}>
                 <TreeSelectMui
                     defaultExpandAll
                     InputLabelProps={{shrink: true}}
@@ -50,10 +57,13 @@ function App() {
                     setValue={setValue}
                     uniqueKey="code"
                 />
-                {/*</Grid>*/}
             </RowMui>
-        </RowMui>
-        </body>
+
+            <RowMui>
+                <ButtonMui text="Submit" onClick={handleSubmit}/>
+            </RowMui>
+        </Grid>
+
     </div>)
 }
 
