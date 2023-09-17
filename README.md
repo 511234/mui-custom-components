@@ -68,6 +68,25 @@ function App() {
 }
 ```
 
+### Options in TreeSelect
+
+`defaultExpandAll`: `boolean`, if all options in `nestedTree` are expanded and arrow is pointing down instead of
+pointing right
+`defaultSelected`: `any`, set a default selected value on first sight, must be one of the `valueKey` values
+in `nestedTree`
+`error`: `boolean`, whether there is an error in the field. Border turns red if true.
+`helperText`: `string`, the error message to be displayed
+`initialLevel`: `number`, the number `nestedTree` will look for as base level
+`InputLabelProps`: `Partial<InputLabelProps>`, MUI InputLabelProps config for TextField component
+`label`: `string`, label for MUI TextField
+`labelKey`: `string`, index key of `nestedTree` as AutoComplete Chip label
+`name`: `string`, name attribute for an `<input>` element
+`nestedTree`: `INestedTree[]`, an array of object options, must have `children_data` (any[]), `level` and any custom
+key-value pair in every option.
+`valueKey`: `string`, index key of `nestedTree` as value. This value will be saved by `setValue` if selected
+`setValue`: `function`, can be for controlled / uncontrolled component
+`uniqueKey`: `string`, index key of `nestedTree` to index ListItem
+
 ### Story behind...
 
 I was migrating a React.js, antd-based project to MUI. TreeView API is available in MUI but it seems impossible to be
