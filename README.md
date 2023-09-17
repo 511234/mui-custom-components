@@ -2,7 +2,11 @@
 
 > 💡Highlight: Customized Tree Select component made with MUI's Autocomplete & List components
 
-![TreeSelect](screenshots/TreeSelect.png)
+All options enabled
+![TreeSelectEnabledOption](screenshots/TreeSelectEnabledOption.png)
+
+Selectively disable some options
+![TreeSelectDisabledOption](screenshots/TreeSelectDisabledOption.png)
 
 ### Description
 
@@ -87,7 +91,24 @@ key-value pair in every option.
 `setValue`: `function`, can be for controlled / uncontrolled component  
 `uniqueKey`: `string`, index key of `nestedTree` to index ListItem
 
-### Story behind...
+### Other cool features
+
+To disable option in `nestedTree`, add `disabled: true` to the option
+
+```
+[ 
+    ...,
+        {
+            children_data: [{code: '1a', level: 2, nodeLabel: 'Class 1A'}],
+            code: 'p1',
+            disabled: true,
+            level: 1,
+            nodeLabel: 'Year 1'
+        }
+]
+```
+
+### Story behind the whole idea
 
 I was migrating a React.js, antd-based project to MUI. TreeView API is available in MUI but it seems impossible to be
 used with Select / AutoComplete components for UI consistency. So, I tried writing a TreeSelect using MUI AutoComplete
